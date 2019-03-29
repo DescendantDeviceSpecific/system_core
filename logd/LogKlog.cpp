@@ -239,9 +239,6 @@ bool LogKlog::onDataAvailable(SocketClient* cli) {
             break;
         }
         if (retval < 0) {
-	    if(errno == EFAULT) {
-	        stopListener();
-	    }
             return false;
         }
         len += retval;
